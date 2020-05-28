@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+    <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/settings.css" type="text/css" />
+    <title>Kanetto Móveis</title>
+
+</head>
+
+<body>
+    <div>
+        <a id="btnCardSettings" type="button" class="btn btn-light" href="kanetto.html"
+            style="float: left; margin: 20px;"><span class="fa fa-arrow-left"></span></a>
+    </div>
+
+    <h1 class="display-4 text-center" style="margin-right:100px">Configurações</h1>
+
+    <!-- Machines Card - Settings -->
+    <div class="card text-center divider">
+        <div class="card-header">
+            Máquinas de Cartão
+        </div>
+        <div class="row" id="containerCards">
+        </div>
+        <div class="card-footer">
+            <button type="button" id="btCallScreenAddMachineCard" class="btn btn-outline-primary">Adicionar Cartão</button>
+            <button type="button" id="btSaveSettings" style="margin-left: 5px;"
+                class="btn btn-outline-success">Salvar</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalMachineCard" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">Adicionar Maquineta</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputMachineName">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Banco</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputMachineBank">
+                        </div>
+                    </div>
+                    <h5 style="text-align: left;">Taxa de Juros</h5>
+                    <hr>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-1" class="col-sm-2 col-form-label labelInterestRate">1x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-1">
+                        </div>
+                        <label for="inputInterestRate-2" class="col-sm-2 col-form-label labelInterestRate">2x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-2">
+                        </div>
+                    </div>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-3" class="col-sm-2 col-form-label labelInterestRate">3x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00"class="form-control" id="inputInterestRate-3">
+                        </div>
+                        <label for="inputInterestRate-4" class="col-sm-2 col-form-label labelInterestRate">4x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-4">
+                        </div>
+                    </div>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-5" class="col-sm-2 col-form-label labelInterestRate">5x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-5">
+                        </div>
+                        <label for="inputInterestRate-6" class="col-sm-2 col-form-label labelInterestRate">6x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-6">
+                        </div>
+                    </div>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-7" class="col-sm-2 col-form-label labelInterestRate">7x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-7">
+                        </div>
+                        <label for="inputInterestRate-8" class="col-sm-2 col-form-label labelInterestRate">8x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-8">
+                        </div>
+                    </div>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-9" class="col-sm-2 col-form-label labelInterestRate">9x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-9">
+                        </div>
+                        <label for="inputInterestRate-10" class="col-sm-2 col-form-label labelInterestRate">10x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-10">
+                        </div>
+                    </div>
+                    <div class="form-group row rowInterestRate">
+                        <label for="inputInterestRate-11" class="col-sm-2 col-form-label labelInterestRate">11x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-11">
+                        </div>
+                        <label for="inputInterestRate-12" class="col-sm-2 col-form-label labelInterestRate">12x</label>
+                        <div class="col-sm-4">
+                            <input type="numeric" data-mask="#0,00" class="form-control" id="inputInterestRate-12">
+                        </div>
+                    </div>                   
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCloseModal" type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+                    <button id="btnAddMachineCard" type="button" class="btn btn-outline-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/fileSaver.js"></script>
+</body>
+
+</html>

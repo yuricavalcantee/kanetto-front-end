@@ -1,0 +1,15 @@
+.divider{
+  margin: 25px 25px !important;
+}
+
+.rowInterestRate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.labelInterestRate{
+    margin: 0px !important;
+    padding: 0px !important;
+    text-align: center !important;
+    justify-content: center !important;
+}

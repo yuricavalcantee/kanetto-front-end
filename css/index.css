@@ -1,0 +1,33 @@
+.divider{
+    margin: 25px 25px !important;
+}
+
+.div-logo{
+    max-width: 100%;
+    height: auto;
+}
+
+.valuesTip{
+    font-size: 15px;
+    text-align: center !important;
+    margin-top: 30px;
+}
+
+.firstTimeAmountCell{
+    margin: auto;
+}
+
+.myAlert{
+    margin-top: 20px;
+}
+
+.labelTotalAmountCell{
+    font-weight: bold;
+    background-color: #31b953;
+    color:white;
+}
+
+.totalAmountCell{
+    background-color: white;
+    font-weight: bold;
+}

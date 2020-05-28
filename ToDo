@@ -1,0 +1,15 @@
+- ao selecionar "cartão" ou "parcela s/ juros" habilitar o campo do valor da parcela e por padrão deixar esse campo desabilitado,
+ou caso outros valores sejam escolhidos (talvez deixar a mesma coisa no campo "valor a financiar").
+
+- adicionar uma parte de configurações onde o usuário vai poder adicionar quantas bandeiras de cartão ele quiser
+bem como a parcela de juros para cada parcela (lembrar da imagem e áudio que o kaik me enviou).
+
+- não permitir que o usuário coloque uma porcentagem ou valor nos campos de desconto e entrada que seja maior que 100% (colocar um aviso de alerta) 
+utilizar toolTip ?
+
+- para otimizar o processo de ir buscar os dados no back-end, posso armazená-los no inicio da página ser carregada, alterar localmente
+e então subir as alterações quando o usuário terminar as alterações na página.
+
+- só usar um array de double onde cada posição será a respectiva taxa de juros.
+
+- ao excluir a maquina que está sendo marcada como "em uso", deixar a próxima máquina setada como "em uso".
