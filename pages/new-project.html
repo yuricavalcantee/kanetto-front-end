@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- JS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+    <script src="/js/tata.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
+    <link rel="stylesheet" href="/css/new-project.css" type="text/css" />
+    <title>Kanetto Móveis</title>
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <h3 class="masthead-brand">Kanetto</h3>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 mx-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/pages/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/settings.html">Configurações</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <img src="/imgs/logo2_svg.svg" class="img-fluid lead" style="width: 40%; height: 50%;" alt="Responsive image">
+    </div>
+
+    <!-- Client's Data -->
+    <div class="card text-center divider">
+        <div class="card-header">
+            Dados do Cliente
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-2 col-form-label">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName" placeholder="Nome">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputAddress" class="col-sm-2 col-form-label">Endereço</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Endereço">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPhone" class="col-sm-2 col-form-label">Telefone</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" id="inputPhone" placeholder="Telefone">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enviroments -->
+    <div class="card text-center divider">
+        <div class="card-header">
+            Ambientes
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-responsive-md table-striped text-center" id="enviromentsTable">
+                <thead class="thead-dark">
+                    <tr>
+                        <th width="10%" scope="col">Incluir</th>
+                        <th width="30%" scope="col">Nome</th>
+                        <th width="10%" scope="col">Qtd</th>
+                        <th width="15%" scope="col">Valor Unitário</th>
+                        <th width="15%" scope="col">Valor Ambiente</th>
+                        <th width="10%" scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyEnviroments">
+                    <tr id="1" class="myRow">
+                        <td><input id="firstEnviromentCheckBoxTable" type="checkbox" checked></td>
+                        <td contenteditable="true" id="firstEnviromentName">Ambiente</td>
+                        <td contenteditable="true" id="firstEnviromentQnt">1</td>
+                        <td contenteditable="true" id="firstEnviromentUnitAmount" class="firstTimeAmountCell">R$ 0,00
+                        </td>
+                        <td>R$ 0,00</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="labelTotalAmountCell">Valor Total</td>
+                        <td class="totalAmountCell" id="totalAmountCell">R$ 0,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="addEnviromentBtn" type="button" class="btn btn-primary btn-sm">Adicionar Ambiente</button>
+        </div>
+    </div>
+
+    <!-- Payment -->
+    <div class="card text-center divider">
+        <div class="card-header">
+            Pagamento
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputQtdProducts">Qtd Ambientes</label>
+                            <input type="text" class="form-control form-control-sm" id="inputQtdProducts" aria-describedby="emailHelp" placeholder="1" readonly>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col">
+                        <div style="text-align: left;">
+                            <label for="inputPaymentCond" style="text-align: left;">Cond. Pagamento</label>
+                        </div>
+                        <div class="form-row" style="text-align:left;">
+                            <div class="col-2">
+                                <div class="form-group" style="text-align:left;">
+                                    <input disabled type="text" class="form-control form-control-sm" id="inputPaymentCond" aria-describedby="emailHelp" placeholder="1">
+                                </div>
+                            </div>
+                            <label for="" style="font-size: large;">+</label>
+                            <div class="col-4">
+                                <select disabled id="selectParcel" class="form-control form-control-sm">
+                                    <option selected>Parcelas</option>
+                                    <option>1x</option>
+                                    <option>2x</option>
+                                    <option>3x</option>
+                                    <option>4x</option>
+                                    <option>5x</option>
+                                    <option>6x</option>
+                                    <option>7x</option>
+                                    <option>8x</option>
+                                    <option>9x</option>
+                                    <option>10x</option>
+                                    <option>11x</option>
+                                    <option>12x</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputTotalAmount">Valor Total a Pagar</label>
+                            <input data-mask="[-]R$ #.##0,00" type="email" class="form-control form-control-sm" id="inputTotalAmount" aria-describedby="emailHelp" placeholder="R$ 0,00" readonly>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputParcelAmount">Valor Parcela</label>
+                            <input data-mask="[-]R$ #.##0,00" type="email" class="form-control form-control-sm" id="inputParcelAmount" aria-describedby="inputParcelAmount" placeholder="R$ 0,00">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <div class="form-group" style="text-align:center;">
+                            <label for="exampleInputEmail1">%</label>
+                            <input data-mask="#0,00" max="100" type="numeric" class="form-control form-control-sm" id="inputEntryAmountPercentage" aria-describedby="exampleInputEmail1" placeholder="" value="0">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputEntryAmount">Valor Entrada</label>
+                            <input data-mask="[-]R$ #.##0,00" type="email" class="form-control form-control-sm" id="inputEntryAmount" aria-describedby="inputEntryAmount" placeholder="R$ 0,00">
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="form-group" style="text-align:center;">
+                            <label for="inputDiscountPercentage">%</label>
+                            <input data-mask="#0,00" max="100" type="numeric" class="form-control form-control-sm" id="inputDiscountPercentage" aria-describedby="emailHelp" placeholder="" value="0">
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputDiscountAmount">Desconto</label>
+                            <input data-mask="[-]R$ #.##0,00" type="email" class="form-control form-control-sm" id="inputDiscountAmount" aria-describedby="inputDiscountAmount" placeholder="R$ 0,00">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group" style="text-align:left;">
+                            <label for="inputFinancedAmount">Valor a Financiar</label>
+                            <input data-mask="[-]R$ #.##0,00" type="email" class="form-control form-control-sm" id="inputFinancedAmount" aria-describedby="inputFinancedAmount">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div style="text-align: left;">
+                            <label for="inputPaymentCond" style="text-align: left;">Forma de Pagamento</label>
+                        </div>
+                        <select class="custom-select my-1 mr-sm-2 form-control-sm" id="selectPaymentOption">
+                            <option selected value="1">À vista</option>
+                            <option value="3">Boleto</option>
+                            <option value="4">Parcela s/juros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6" style="text-align: left;">
+                        <p class="valuesTip">*Todos os valores dessa página estão em R$ (reais).</p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" id="btnPrint" class="btn btn-outline-primary">Imprimir</button>
+                    <button type="button" id="btnCallModal" class="btn btn-outline-success" data-toggle="modal" data-target="#modalSaveProject">Finalizar Projeto</button>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalSaveProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Kanetto Ambientações</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Tem certeza que deseja concluir esse projeto?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" id="btnSaveProject" class="btn btn-success">Concluir
+                                    Projeto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/new-project.js"></script>
+</body>
+
+</html>
